@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Em casa ou não?</title>
+</head>
+<body>
+    <h1>Onde você está?</h1>
+    <input type="pais" id="pais" name="pais">
+    <input type="button" value="Aqui eu sou" id="button" onclick="aquiEuSou()">
+    <div id="res">Neste pais eu sou</div>
+
+    <script>
+        var res = document.getElementById('res')
+        var txt = document.getElementById('pais')
+        function aquiEuSou() {
+            if (txt.value == 'Brasil'){
+                res.innerHTML += ` natural daqui mesmo.`
+            }else{
+                res.innerHTML += ` estrangeiro.`
+            }
+        }
+    </script>
+</body>
+</html>
