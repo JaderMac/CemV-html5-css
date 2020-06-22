@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tudo sobre GoogleGlass </title>
+    <link rel="stylesheet" href="_css/estilo.css">
+    <link rel="stylesheet" href="_css/form.css">
+    <script language="javascript" src="_javascript/funcoes.js"></script>
+    <script>
+        function calculaTotal(){
+            var qtd = parseInt(document.getElementById('cQtd').value)
+            tot = qtd * 1500;
+            document.getElementById('cTot').value = tot
+        }
+    </script>
+</head>
+
+<body>
+    <div id="interface">
+        <header id="cabecalho">
+            <hgroup>
+                <h1>
+                    Google Glass
+                </h1>
+                <h2>
+                    A revolução do Google está chegando
+                </h2>
+
+            </hgroup>
+            
+            <img id="icone" src="_imagens/glass-oculos-preto-peq.png" alt="Foto do icone telefone.">
+            
+            <nav id="menu">
+                <h1>
+                    Menu Principal
+                </h1>
+                <ul>
+                    <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                        <a href="specs.html">Especificações</a>
+                    </li>
+                    <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')">    
+                        <a href="fotos.html">Fotos</a>
+                    </li>
+                    <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                        <a href="multimidia.html">Multimídia</a>
+                    </li>
+                    <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                        <a href="fale-conosco.html">Fale conosco</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <header id="cabecalho-artigo">
+            <hgroup>
+                <h3>Fale Conosco > Contato</h3>
+                <h1>Formulário de Contato </h1>
+                <h2>por Gustavo Guanabara</h2>
+                <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+            </hgroup>
+        </header>
+
+<form id="form" method="post" id="fContato" action="mailto:jadermachado@rsinet.com.br" oninput="calculaTotal()">
+    <fieldset id="usuario">
+        <legend>
+            Identificação do Usuário
+        </legend>
+            <p>
+                <label for="cNome">Nome:</label> <input type="text" name="tName" id="cNome" size="20" maxlength="30" placeholder="Nome Completo">
+            </p>
+            <p>
+                <label for="cSenha">Senha:</label><input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="Senha">
+            </p>
+            <p>
+                <label for="cEmail">Email:</label> <input type="email" name="tEmail" id="cEmail" size="20" maxlength="40">
+            </p>
+            
+            <fieldset id="sexo">
+                <legend>Sexo:</legend>
+                    <input type="radio" name="tSexo" id="cMasc" checked><label for="cMasc">Masculino</label> <br>
+                    <input type="radio" name="tSexo" id="cFem"> <label for="cFem">Feminino</label>
+            </fieldset>
+            
+            <p>
+                Data de Nascimento: <input type="date" name="cNasc" id="tNasc">
+            </p>
+    </fieldset>
+    
+    <fieldset id="endereco">
+        <legend>
+            Endereço do Usuário
+        </legend>
+            <p>
+            <label for="cLog">Logradouro:</label><input type="text" name="cLog" id="tLog" size="20" maxlength="80" placeholder="Rua, Av. Trav...">
+            </p>
+            <p><label for="cNumE">Número:</label><input type="number" name="cNumE" id="tNumE" size="4" maxlength="7" min="0" max="99999"></p>
+
+            <p><label for="cEst">Estado:</label><select name="cEst" id="tEst">
+                <optgroup label="Sudeste">
+                    <option selected>SP</option>
+                    <option value="RJ">RJ</option>
+                    <option>MG</option>
+                </optgroup>
+                <optgroup label="Sul">
+                    <option>RS</option>
+                    <option>PR</option>
+                    <option>SC</option>
+                </optgroup>
+            </select>
+            <p><label for="cCid2">Cidade:</label><input type="text" name="cCid" id="tCid" size="20" maxlength="40" placeholder="Sua cidade2" list="cidades">
+            <datalist id="cidades">
+                <option value="Rio de janeiro"></option>
+                <option value="Belford Roxo"></option>
+                <option value="Niteroi"></option>
+            </datalist>
+        </p>
+    </fieldset>
+    
+    <fieldset id="mensagem">
+        <legend>
+            Mensagem do Usuário
+        </legend>
+            <p><label for="cUrg">Grau de Urgência:</label>
+            Min.<input type="range" name="cUrg" id="tUrg" min="0" max="10" step="2">Máx./p>
+            <p><label for="cMens">Mensagem:</label><textarea name="sMsg" id="cMsg" cols="35" rows="5" placeholder="Deixe aqui sua mensagem."></textarea></p>
+    </fieldset>
+    
+    <fieldset id="comprar">
+        <legend>
+            Quero um Google Glass
+        </legend>
+        <p><input type="checkbox" name="tPed" id="cPEd" checked>Gostaria de adquirir um Google Glass quando disponível</p>
+            <p><label for="cCor">Cor:</label><input type="color" name="tCor" id="cCor" value="#0000FF"></p>
+            <p><label for="cQtd">Quantidade:</label><input type="number" id="cQtd" name="tQtd" min="0" max="5" value="0"></p>
+            <p><label for="cPrT">Preço Total: R$</label><input type="text" name="tTot" id="cTot" readonly placeholder="Total a pagar"></p>
+    </fieldset>
+
+    
+    <input type="image" name="enviar" src="_imagens/botao-enviar.png">
+
+</form>
+
+<footer id="rodape"> 
+    <p>
+        Copyright 2013 - by Gustavo Guanabara <br>
+        <a href="https://www.facebook.com" target="_blank">Facebook</a> | <a href="https://www.twitter.com" target="_blank">Twitter</a>
+    </p> 
+</footer>
+</div> 
+</body>
+</html>
